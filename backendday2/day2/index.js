@@ -1,11 +1,15 @@
  const fs=require("fs");
+ //importing fs
 let args = process.argv;
 let operation=args[2];
 let filename=args[3];
 let filename2=args[4];
 
+
 switch(operation){
+    //using switch for identifing operation
     case "read":{
+        //first one is file from which u want to read,decoding lang,call abck function because it is an async function
         fs.readFile(filename,"utf8",(err,mes)=>{
            if(err){
             console.log("error",err)
@@ -13,6 +17,8 @@ switch(operation){
             console.log(mes)
            }
         })
+        //applying break
+        break;
     }
 
 
@@ -20,6 +26,8 @@ switch(operation){
         fs.unlink(filename);
         console.log(`{filename} was deleted`)
     }
+    //for deleting unlink is used
+    break;
 
     case "append":{
         let CONTENT="keep going buddy\n";
@@ -29,6 +37,7 @@ switch(operation){
             }
            console.log("appending sucessful")
         })
+        break;
     }
 
     case "rename":{
@@ -38,6 +47,7 @@ switch(operation){
             }
             console.log("rename sucessful")
         })
+        break;
     }
 
     case "create":{
@@ -51,16 +61,14 @@ switch(operation){
                 console.log('File has been created successfully.');
             }
         })
+        break;
     }
 
     case "list":{
-        fs.readdir(filename,(err,ans)=>{
-            if(err){
-                console.log(err)
-            }else{
-                console.log(ans)
-            }
-        })
+    
+       
+       fs.readdirSync(filename);
+        break;
     }
     default:{
         console.log(`invalide operation ${operation}`)
