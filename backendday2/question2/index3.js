@@ -1,12 +1,7 @@
-const os=require("os");
-
-let args=process.argv;
-let operation=args[2];
+const { v4: uuidv4 } = require('uuid');
+console.log(uuidv4());
 
 
-switch (operation){
-    case "os":{
-        
-    }
-}
-console.log(operation)
+const crypto = require('crypto');
+const secretKey = crypto.randomBytes(32); 
+console.log(secretKey)
