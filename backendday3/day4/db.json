@@ -1,0 +1,30 @@
+{
+    "todos": [
+      {
+        "id": 1,
+        "title": "Buy groceries",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "title": "Finish Node.js project",
+        "completed": false
+      },
+      {
+        "id": 3,
+        "title": "Call the dentist",
+        "completed": true
+      },
+      {
+        "id": 4,
+        "title": "Read a book",
+        "completed": false
+      },
+      {
+        "id": 5,
+        "title": "Exercise for 30 minutes",
+        "completed": true
+      }
+    ]
+  }
+  
