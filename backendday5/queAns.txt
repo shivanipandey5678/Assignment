@@ -1,0 +1,41 @@
+que 1)how do you list all the databases present in you mongoDB server?
+ans1) we can use the command show dbs
+
+que2) What command is used to create or switch to a database in MongoDB?
+ans2) use databasename
+
+que3)  How can you create a collection named "students" in your MongoDB database?
+ans3) use students if you don't have that database name then it will create it for you.otherwise switch to it.
+
+que4) Write the command to insert a single document into the "students" collection with at least three fields: name, age, and course
+ans4) db.students.insertOne({name:"shivani"})
+
+que5)  How would you insert multiple documents into the "students" collection in a single command?
+ans5) db.students.insertMany([{name:"john doe",age:45,course:bca},{name:"ishu,age:25,course:btech},{name:"bittu",age:15,course:bsc}])
+
+
+
+
+que5) What command is used to find or read all documents in the "students" collection?
+ans5) db.students.find()
+
+que6) How can you read or find the first document in the "students" collection?
+ans6)db.students.findOne()
+
+que7) Describe the command to update the course field of a specific student named "John Doe" to "Data Science
+ans7)db.students.updateOne({name:"john doe"},{$set:{name:"Data Science}})
+
+que8)What command would you use to increment the age field of all documents ?
+ans8)db.students.updateMany(
+    {},
+    {$inc:{age:1}}
+)
+
+que9) how can you delete a document with a specific name from the student collection?
+ans9) db.students.deleteOne({name:"John Doe"})
+
+que10)Write the command to delete all documents from the "students" collection where the age is greater than or equal to a specific value.
+ans10) db.students.deleteMany({age:{$gte:20}})
+
+que11) how do you find document in the students collection where the course field is bsc?
+ans11) db.students.find({course:"bsc"})
